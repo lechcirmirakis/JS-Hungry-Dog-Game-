@@ -18,7 +18,7 @@ section#score {
 }
 
 #board  > div {
-  border: 1px solid black;
+  border: 1px solid green;
   float: left;
   width: 64px;
   height: 64px;
@@ -37,12 +37,12 @@ section#score div {
   margin: 1em auto;
 }
 
-.furry {
+.dog {
   background-image: url('../images/furry.png');
   background-repeat: no-repeat;
   background-size: cover;
 }
-.coin {
+.dainty {
   background-image: url('../images/coin.png');
   background-repeat: no-repeat;
   background-size: cover;

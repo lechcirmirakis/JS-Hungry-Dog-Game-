@@ -1,23 +1,38 @@
-console.log("Legia mistrzem POlski i Swiata");
-function Furry(n) {
+function Dog(n) { //
     this.x = 0;
     this.y = 0;
-    this.direction = right;
+    this.direction = "right";
 }
 
-function Coin() {
-    this.x = Math.floor(Math.random()*10);
-    this.y = Math.floor(Math.random()*10);
+function Dainty() {
+    this.x = Math.floor(Math.random() * 10);
+    this.y = Math.floor(Math.random() * 10);
 }
 
-function Game() {
-    this.board = queryselectorAll('#board div');
-    this.furry = new Furry();
-    this.coin = new Coin();
+function Game() { // C
+    this.board = document.querySelectorAll("#board div");
+    this.dog = new Dog();
+    this.dainty = new Dainty();
     this.score = 0;
 
-    this.index = function(x,y) {
-    return x + (y * 10);
-}
+    this.index = function(x, y) {
+        return x + (y * 10);
+    }
 
 }
+
+Game.prototype.showDog = function() {
+
+    var d = this.board[this.index(this.dog.x, this.dog.y)].classList.add("dog");
+
+};
+
+Game.prototype.showDainty = function() {
+
+    var da = this.board[this.index(this.dainty.x, this.dainty.y)].classList.add("dainty");
+
+};
+
+var gra = new Game();
+gra.showDog();
+gra.showDainty();
