@@ -22,7 +22,6 @@ function Game() { // C
     var self = this;
 
     this.startGame = function() {
-
         this.showDog();
         this.showDainty();
         this.idSetInterval = setInterval(function() {
@@ -39,33 +38,49 @@ Game.prototype.showDainty = function() {
     var da = this.board[this.index(this.dainty.x, this.dainty.y)].classList.add("dainty");
 };
 
-Game.prototype.hideVisibleDog = function () {
-    document.querySelector('.dog').classList.remove('dog');
-};
-
-Game.prototype.hideVisibleDog = function() {
-    document.querySelector(".dog").classList.remove("dog");
-}
-
 Game.prototype.moveDog = function() {
     this.hideVisibleDog();
 
     if (this.dog.direction === "right") {
         this.dog.x += 1;
     } else if (this.dog.direction === "down") {
-        this.dog.y -= 1;
-    } else if (this.dog.direction === "up") {
         this.dog.y += 1;
+    } else if (this.dog.direction === "up") {
+        this.dog.y -= 1;
     } else if (this.dog.direction === "left") {
         this.dog.x -= 1;
     }
-
     this.showDog();
 }
 
+Game.prototype.hideVisibleDog = function () {
+    document.querySelector('.dog').classList.remove('dog');
+};
 
+Game.prototype.turnDog = function(event){
+    var x = event.which
+    switch (x) {
+        case 37:
+        this.dog.direction = "left";
+        break;
 
+        case 38:
+        this.dog.direction = "up";
+        break;
 
-var gra = new Game();
+        case 39:
+        this.dog.direction = "right";
+        break;
 
-gra.startGame();
+        case 40:
+        this.dog.direction = "down";
+        break;
+    }
+}
+
+var doggy = new Game();
+doggy.startGame();
+
+document.addEventListener('keydown', function(event){
+    doggy.turnDog(event);
+});
