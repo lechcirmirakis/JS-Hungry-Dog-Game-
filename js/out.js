@@ -545,16 +545,54 @@ module.exports = __webpack_require__(2);
 "use strict";
 
 
+var Game = __webpack_require__(5);
+
+var doggy = new Game();
+
+doggy.startGame();
+
+document.addEventListener('keydown', function (event) {
+    doggy.turnDog(event);
+});
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+function Dainty() {
+    this.x = Math.floor(Math.random() * 10);
+    this.y = Math.floor(Math.random() * 10);
+}
+
+module.exports = Dainty;
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
 function Dog() {
     this.x = 0;
     this.y = 0;
     this.direction = "right";
 }
 
-function Dainty() {
-    this.x = Math.floor(Math.random() * 10);
-    this.y = Math.floor(Math.random() * 10);
-}
+module.exports = Dog;
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var Dainty = __webpack_require__(3);
+var Dog = __webpack_require__(4);
 
 function Game() {
     // C
@@ -653,12 +691,7 @@ Game.prototype.gameOver = function () {
     }
 };
 
-var doggy = new Game();
-doggy.startGame();
-
-document.addEventListener('keydown', function (event) {
-    doggy.turnDog(event);
-});
+module.exports = Game;
 
 /***/ })
 /******/ ]);
