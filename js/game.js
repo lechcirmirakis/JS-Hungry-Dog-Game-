@@ -23,9 +23,9 @@ function Game() {
 
     var startButton = document.querySelector("#startButton");
     startButton.addEventListener("click", function() {
-            self.startGame();
-            startButton.remove();
-        }, false);
+        self.startGame();
+        startButton.remove();
+    }, false);
 }
 
 Game.prototype.showDog = function() {
@@ -33,7 +33,7 @@ Game.prototype.showDog = function() {
 };
 
 Game.prototype.showDainty = function() {
-    var da = this.board[this.index(this.dainty.x, this.dainty.y)].classList.add("dainty");
+    this.board[this.index(this.dainty.x, this.dainty.y)].classList.add("dainty");
 };
 
 Game.prototype.moveDog = function() {
@@ -51,20 +51,20 @@ Game.prototype.moveDog = function() {
 
     this.gameOver();
     if (this.isGameOver === true) {
-            return;
-        }
+        return;
+    }
     this.showDog();
     this.checkCoinCollision();
 }
 
 Game.prototype.hideVisibleDog = function() {
-        var classDog = document.querySelector(".dog");
-        if(classDog) {
-            classDog.classList.remove('dog');
-        }
-    };
+    var classDog = document.querySelector(".dog");
+    if (classDog) {
+        classDog.classList.remove('dog');
+    }
+};
 
-Game.prototype.checkCoinCollision = function () {
+Game.prototype.checkCoinCollision = function() {
     if (this.dog.x === this.dainty.x && this.dog.y === this.dainty.y) {
         document.querySelector(".dainty").classList.remove("dainty");
         this.score += 1;
@@ -74,8 +74,8 @@ Game.prototype.checkCoinCollision = function () {
     }
 };
 
-Game.prototype.gameOver = function () {
-    if (this.dog.x <0 || this.dog.x >9 || this.dog.y <0 || this.dog.y >9) {
+Game.prototype.gameOver = function() {
+    if (this.dog.x < 0 || this.dog.x > 9 || this.dog.y < 0 || this.dog.y > 9) {
         this.isGameOver = true;
         clearInterval(this.idSetInterval);
         this.hideVisibleDog();
@@ -85,7 +85,7 @@ Game.prototype.gameOver = function () {
 
 Game.prototype.scoreBoard = function() {
     var score = document.createElement('div');
-    score.innerText = "Game Over, your score is " +this.score;
+    score.innerText = "Game Over, your score is " + this.score;
     var score_board = document.createElement('div');
     score_board.classList.add('scoreBoard');
     score_board.appendChild(score);
@@ -94,7 +94,7 @@ Game.prototype.scoreBoard = function() {
     this.playAgain();
 };
 
-Game.prototype.playAgain = function () {
+Game.prototype.playAgain = function() {
     var playAgain = document.createElement('button');
     playAgain.innerText = "Play Again";
     var inScoreBoard = document.querySelector('.scoreBoard');
@@ -104,23 +104,23 @@ Game.prototype.playAgain = function () {
     })
 };
 
-Game.prototype.turnDog = function(event){
+Game.prototype.turnDog = function(event) {
     switch (event.which) {
         case 37:
-        this.dog.direction = "left";
-        break;
+            this.dog.direction = "left";
+            break;
 
         case 38:
-        this.dog.direction = "up";
-        break;
+            this.dog.direction = "up";
+            break;
 
         case 39:
-        this.dog.direction = "right";
-        break;
+            this.dog.direction = "right";
+            break;
 
         case 40:
-        this.dog.direction = "down";
-        break;
+            this.dog.direction = "down";
+            break;
     }
 }
 
