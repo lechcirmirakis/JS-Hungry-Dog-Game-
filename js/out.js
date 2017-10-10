@@ -545,11 +545,9 @@ module.exports = __webpack_require__(2);
 "use strict";
 
 
-var Game = __webpack_require__(5);
+var Game = __webpack_require__(3);
 
 var doggy = new Game();
-
-doggy.startGame();
 
 document.addEventListener('keydown', function (event) {
     doggy.turnDog(event);
@@ -562,37 +560,8 @@ document.addEventListener('keydown', function (event) {
 "use strict";
 
 
-function Dainty() {
-    this.x = Math.floor(Math.random() * 10);
-    this.y = Math.floor(Math.random() * 10);
-}
-
-module.exports = Dainty;
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-function Dog() {
-    this.x = 0;
-    this.y = 0;
-    this.direction = "right";
-}
-
-module.exports = Dog;
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var Dainty = __webpack_require__(3);
-var Dog = __webpack_require__(4);
+var Dainty = __webpack_require__(4);
+var Dog = __webpack_require__(5);
 
 function Game() {
     // C
@@ -614,6 +583,12 @@ function Game() {
             self.moveDog();
         }, 500);
     };
+
+    var startButton = document.querySelector("#startButton");
+    startButton.addEventListener("click", function () {
+        self.startGame();
+        startButton.remove();
+    }, false);
 }
 
 Game.prototype.showDog = function () {
@@ -625,6 +600,16 @@ Game.prototype.hideVisibleDog = function () {
     if (classDog) {
         classDog.classList.remove('dog');
     }
+};
+
+Game.prototype.scoreBoard = function () {
+    var score = document.createElement('div');
+    score.innerText = "Game Over, your score is " + this.score;
+    var score_board = document.createElement('div');
+    score_board.classList.add('scoreBoard');
+    score_board.appendChild(score);
+    var board = document.querySelector('#board');
+    board.appendChild(score_board);
 };
 
 Game.prototype.showDainty = function () {
@@ -687,11 +672,40 @@ Game.prototype.gameOver = function () {
         this.isGameOver = true;
         clearInterval(this.idSetInterval);
         this.hideVisibleDog();
-        alert("GAME OVER!!!!");
+        this.scoreBoard();
     }
 };
 
 module.exports = Game;
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+function Dainty() {
+    this.x = Math.floor(Math.random() * 10);
+    this.y = Math.floor(Math.random() * 10);
+}
+
+module.exports = Dainty;
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+function Dog() {
+    this.x = 0;
+    this.y = 0;
+    this.direction = "right";
+}
+
+module.exports = Dog;
 
 /***/ })
 /******/ ]);

@@ -20,6 +20,12 @@ function Game() { // C
             self.moveDog();
         }, 500);
     }
+
+    var startButton = document.querySelector("#startButton");
+    startButton.addEventListener("click", function() {
+            self.startGame();
+            startButton.remove();
+        }, false);
 }
 
 Game.prototype.showDog = function() {
@@ -32,6 +38,16 @@ Game.prototype.hideVisibleDog = function() {
             classDog.classList.remove('dog');
         }
     };
+
+Game.prototype.scoreBoard = function() {
+    var score = document.createElement('div');
+    score.innerText = "Game Over, your score is " +this.score;
+    var score_board = document.createElement('div');
+    score_board.classList.add('scoreBoard');
+    score_board.appendChild(score);
+    var board = document.querySelector('#board');
+    board.appendChild(score_board);
+};
 
 Game.prototype.showDainty = function() {
     var da = this.board[this.index(this.dainty.x, this.dainty.y)].classList.add("dainty");
@@ -93,7 +109,7 @@ Game.prototype.gameOver = function () {
         this.isGameOver = true;
         clearInterval(this.idSetInterval);
         this.hideVisibleDog();
-        alert("GAME OVER!!!!")
+        this.scoreBoard();
     }
 }
 
