@@ -51,6 +51,7 @@ Game.prototype.moveDog = function() {
         this.dog.x -= 1;
     }
     this.showDog();
+    this.checkCoinCollision();
 }
 
 Game.prototype.hideVisibleDog = function () {
@@ -58,8 +59,7 @@ Game.prototype.hideVisibleDog = function () {
 };
 
 Game.prototype.turnDog = function(event){
-    var x = event.which
-    switch (x) {
+    switch (event.which) {
         case 37:
         this.dog.direction = "left";
         break;
@@ -77,6 +77,16 @@ Game.prototype.turnDog = function(event){
         break;
     }
 }
+
+Game.prototype.checkCoinCollision = function () {
+    if (this.dog.x === this.dainty.x && this.dog.y === this.dainty.y) {
+        document.querySelector(".dainty").classList.remove("dainty");
+        this.score += 1;
+        document.querySelector('strong').innerText = this.score;
+        this.dainty = new Dainty();
+        this.showDainty();
+    }
+};
 
 var doggy = new Game();
 doggy.startGame();
