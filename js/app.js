@@ -1,4 +1,4 @@
-function Dog(n) { //
+function Dog() {
     this.x = 0;
     this.y = 0;
     this.direction = "right";
@@ -14,7 +14,7 @@ function Game() { // C
     this.dog = new Dog();
     this.dainty = new Dainty();
     this.score = 0;
-
+    this.isGameOver = false;
     this.index = function(x, y) {
         return x + (y * 10);
     }
@@ -34,6 +34,13 @@ Game.prototype.showDog = function() {
     var d = this.board[this.index(this.dog.x, this.dog.y)].classList.add("dog");
 };
 
+Game.prototype.hideVisibleDog = function() {
+        var classDog = document.querySelector(".dog");
+        if(classDog) {
+            classDog.classList.remove('dog');
+        }
+    };
+
 Game.prototype.showDainty = function() {
     var da = this.board[this.index(this.dainty.x, this.dainty.y)].classList.add("dainty");
 };
@@ -50,13 +57,14 @@ Game.prototype.moveDog = function() {
     } else if (this.dog.direction === "left") {
         this.dog.x -= 1;
     }
+
+    this.gameOver();
+    if (this.isGameOver === true) {
+            return;
+        }
     this.showDog();
     this.checkCoinCollision();
 }
-
-Game.prototype.hideVisibleDog = function () {
-    document.querySelector('.dog').classList.remove('dog');
-};
 
 Game.prototype.turnDog = function(event){
     switch (event.which) {
@@ -87,6 +95,15 @@ Game.prototype.checkCoinCollision = function () {
         this.showDainty();
     }
 };
+
+Game.prototype.gameOver = function () {
+    if (this.dog.x <0 || this.dog.x >9 || this.dog.y <0 || this.dog.y >9) {
+        this.isGameOver = true;
+        clearInterval(this.idSetInterval);
+        this.hideVisibleDog();
+        alert("GAME OVER!!!!")
+    }
+}
 
 var doggy = new Game();
 doggy.startGame();
