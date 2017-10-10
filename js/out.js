@@ -610,6 +610,17 @@ Game.prototype.scoreBoard = function () {
     score_board.appendChild(score);
     var board = document.querySelector('#board');
     board.appendChild(score_board);
+    this.playAgain();
+};
+
+Game.prototype.playAgain = function () {
+    var playAgain = document.createElement('button');
+    playAgain.innerText = "Play Again";
+    var inScoreBoard = document.querySelector('.scoreBoard');
+    inScoreBoard.appendChild(playAgain);
+    playAgain.addEventListener('click', function () {
+        location.reload();
+    });
 };
 
 Game.prototype.showDainty = function () {
