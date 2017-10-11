@@ -11,14 +11,29 @@ function Game() {
         return x + (y * 10);
     }
 
+    this.speed = 500;
     var self = this;
 
+    this.checkCoinCollision = function() {
+        if (this.dog.x === this.dainty.x && this.dog.y === this.dainty.y) {
+            document.querySelector(".dainty").classList.remove("dainty");
+            this.score += 1;
+            this.speed -= 10;
+            console.log(this.speed);
+            document.querySelector('strong').innerText = this.score;
+            this.dainty = new Dainty();
+            this.showDainty();
+            clearInterval(this.idSetInterval);
+            this.idSetInterval = setInterval(function() {
+                self.moveDog();
+            }, this.speed)
+        }
+    };
+
     this.startGame = function() {
-        this.showDog();
-        this.showDainty();
         this.idSetInterval = setInterval(function() {
             self.moveDog();
-        }, 400);
+        }, this.speed);
     }
 
     var startButton = document.querySelector("#startButton");
@@ -61,16 +76,6 @@ Game.prototype.hideVisibleDog = function() {
     var classDog = document.querySelector(".dog");
     if (classDog) {
         classDog.classList.remove('dog');
-    }
-};
-
-Game.prototype.checkCoinCollision = function() {
-    if (this.dog.x === this.dainty.x && this.dog.y === this.dainty.y) {
-        document.querySelector(".dainty").classList.remove("dainty");
-        this.score += 1;
-        document.querySelector('strong').innerText = this.score;
-        this.dainty = new Dainty();
-        this.showDainty();
     }
 };
 

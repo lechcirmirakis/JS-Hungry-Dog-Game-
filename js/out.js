@@ -549,6 +549,9 @@ var Game = __webpack_require__(3);
 
 var doggy = new Game();
 
+doggy.showDainty();
+doggy.showDog();
+
 document.addEventListener('keydown', function (event) {
     doggy.turnDog(event);
 });
@@ -573,14 +576,29 @@ function Game() {
         return x + y * 10;
     };
 
+    this.speed = 500;
     var self = this;
 
+    this.checkCoinCollision = function () {
+        if (this.dog.x === this.dainty.x && this.dog.y === this.dainty.y) {
+            document.querySelector(".dainty").classList.remove("dainty");
+            this.score += 1;
+            this.speed -= 10;
+            console.log(this.speed);
+            document.querySelector('strong').innerText = this.score;
+            this.dainty = new Dainty();
+            this.showDainty();
+            clearInterval(this.idSetInterval);
+            this.idSetInterval = setInterval(function () {
+                self.moveDog();
+            }, this.speed);
+        }
+    };
+
     this.startGame = function () {
-        this.showDog();
-        this.showDainty();
         this.idSetInterval = setInterval(function () {
             self.moveDog();
-        }, 400);
+        }, this.speed);
     };
 
     var startButton = document.querySelector("#startButton");
@@ -595,7 +613,7 @@ Game.prototype.showDog = function () {
 };
 
 Game.prototype.showDainty = function () {
-    var da = this.board[this.index(this.dainty.x, this.dainty.y)].classList.add("dainty");
+    this.board[this.index(this.dainty.x, this.dainty.y)].classList.add("dainty");
 };
 
 Game.prototype.moveDog = function () {
@@ -623,16 +641,6 @@ Game.prototype.hideVisibleDog = function () {
     var classDog = document.querySelector(".dog");
     if (classDog) {
         classDog.classList.remove('dog');
-    }
-};
-
-Game.prototype.checkCoinCollision = function () {
-    if (this.dog.x === this.dainty.x && this.dog.y === this.dainty.y) {
-        document.querySelector(".dainty").classList.remove("dainty");
-        this.score += 1;
-        document.querySelector('strong').innerText = this.score;
-        this.dainty = new Dainty();
-        this.showDainty();
     }
 };
 
