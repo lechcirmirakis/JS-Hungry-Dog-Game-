@@ -1,42 +1,42 @@
-var Dainty = require("./dainty.js");
-var Dog = require("./dog.js");
+var Dainty = require("./dainty.js"); // import dainty.js
+var Dog = require("./dog.js"); // import dog.js
 
-function Game() {
+function Game() { // constructor for game
     this.board = document.querySelectorAll("#board div");
-    this.dog = new Dog();
-    this.dainty = new Dainty();
-    this.score = 0;
+    this.dog = new Dog(); // new object Dog basen on the Dog constructor
+    this.dainty = new Dainty(); // // new object Dog basen on the Dog constructor
+    this.score = 0; // variable holding the game score
     this.isGameOver = false;
     this.index = function(x, y) {
         return x + (y * 10);
     }
 
-    this.speed = 500;
+    this.speed = 500; // variable holding Dog speed in ms
     var self = this;
 
-    this.checkCoinCollision = function() {
+    this.checkCoinCollision = function() { // Method of dog collision with delicacy
         if (this.dog.x === this.dainty.x && this.dog.y === this.dainty.y) {
             document.querySelector(".dainty").classList.remove("dainty");
             this.score += 1;
-            this.speed -= 10;
-            document.querySelector('#speedLevel').innerText = this.speed+" ms/s"
+            this.speed -= 10; // increases Dog speed
+            document.querySelector('#speedLevel').innerText = this.speed+" ms"
             document.querySelector('strong').innerText = this.score;
             this.dainty = new Dainty();
             this.showDainty();
-            clearInterval(this.idSetInterval);
+            clearInterval(this.idSetInterval); // clear interval for increases speed
             this.idSetInterval = setInterval(function() {
                 self.moveDog();
             }, this.speed)
         }
     };
 
-    this.startGame = function() {
+    this.startGame = function() { // the method that starts the game
         this.idSetInterval = setInterval(function() {
             self.moveDog();
         }, this.speed);
     }
 
-    var startButton = document.querySelector("#startButton");
+    var startButton = document.querySelector("#startButton"); // variable for start button
     startButton.addEventListener("click", function() {
         self.startGame();
         startButton.remove();
@@ -51,7 +51,7 @@ Game.prototype.showDainty = function() {
     this.board[this.index(this.dainty.x, this.dainty.y)].classList.add("dainty");
 };
 
-Game.prototype.moveDog = function() {
+Game.prototype.moveDog = function() { // method for move Dog on the board
     this.hideVisibleDog();
 
     if (this.dog.direction === "right") {
@@ -72,14 +72,14 @@ Game.prototype.moveDog = function() {
     this.checkCoinCollision();
 }
 
-Game.prototype.hideVisibleDog = function() {
+Game.prototype.hideVisibleDog = function() { // hide the dog on the previous board
     var classDog = document.querySelector(".dog");
     if (classDog) {
         classDog.classList.remove('dog');
     }
 };
 
-Game.prototype.gameOver = function() {
+Game.prototype.gameOver = function() { // If the dog collides with the wall
     if (this.dog.x < 0 || this.dog.x > 9 || this.dog.y < 0 || this.dog.y > 9) {
         this.isGameOver = true;
         clearInterval(this.idSetInterval);
@@ -88,7 +88,7 @@ Game.prototype.gameOver = function() {
     }
 }
 
-Game.prototype.scoreBoard = function() {
+Game.prototype.scoreBoard = function() { // displays the board with the final score
     var score = document.createElement('div');
     score.innerText = "Game Over, your score is " + this.score;
     var score_board = document.createElement('div');
@@ -99,7 +99,7 @@ Game.prototype.scoreBoard = function() {
     this.playAgain();
 };
 
-Game.prototype.playAgain = function() {
+Game.prototype.playAgain = function() { // play again button
     var playAgain = document.createElement('button');
     playAgain.innerText = "Play Again";
     var inScoreBoard = document.querySelector('.scoreBoard');
@@ -109,7 +109,7 @@ Game.prototype.playAgain = function() {
     })
 };
 
-Game.prototype.turnDog = function(event) {
+Game.prototype.turnDog = function(event) { // event for dog move
     switch (event.which) {
         case 37:
             this.dog.direction = "left";
