@@ -19,7 +19,7 @@ function Game() {
             document.querySelector(".dainty").classList.remove("dainty");
             this.score += 1;
             this.speed -= 10;
-            console.log(this.speed);
+            document.querySelector('#speedLevel').innerText = this.speed+" ms/s"
             document.querySelector('strong').innerText = this.score;
             this.dainty = new Dainty();
             this.showDainty();
