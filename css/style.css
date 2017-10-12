@@ -51,12 +51,12 @@ section#score div {
 }
 
 .dog {
-  background-image: url('../images/furry.png');
+  background-image: url('../images/dog.png');
   background-repeat: no-repeat;
   background-size: cover;
 }
 .dainty {
-  background-image: url('../images/coin.png');
+  background-image: url('../images/dainty.png');
   background-repeat: no-repeat;
   background-size: cover;
 }
