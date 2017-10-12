@@ -587,8 +587,7 @@ function Game() {
             document.querySelector(".dainty").classList.remove("dainty");
             this.score += 1;
             this.speed -= 10; // increases Dog speed
-            document.querySelector('#speedLevel').innerText = this.speed + " ms";
-            document.querySelector('strong').innerText = this.score;
+            document.querySelector('span').innerText = this.score;
             this.dainty = new Dainty();
             this.showDainty();
             clearInterval(this.idSetInterval); // clear interval for increases speed
@@ -606,10 +605,14 @@ function Game() {
     };
 
     var startButton = document.querySelector("#startButton"); // variable for start button
-    startButton.addEventListener("click", function () {
+    startButton.addEventListener("click", function (e) {
         self.startGame();
-        startButton.remove();
+        self.endEvent();
     }, false);
+
+    this.endEvent = function () {
+        startButton.removeEventListener('click');
+    };
 }
 
 Game.prototype.showDog = function () {
