@@ -189,9 +189,47 @@ section#score {
     font-size: 20px;
     color: #FFF;
     text-decoration: none;
+    cursor: pointer;
 }
 
-.action-button span {
+.note {
+    width: 160px;
+    height: 160px;
+    box-shadow: 0 3px 6px rgba(0,0,0,.25);
+    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.25);
+    -moz-box-shadow: 0 3px 6px rgba(0,0,0,.25);
+    float: left;
+    margin: 8px;
+    border: 1px solid rgba(0,0,0,.25);
+}
+
+.sticky1 {
+    transform: rotate(-3.5deg);
+    -webkit-transform: rotate(-3.5deg);
+    -moz-transform: rotate(-3.5deg);
+    background-color: #CBFAFA;
+}
+
+.text {
+    margin: 10px;
+    font-family: 'The Girl Next Door', cursive;
+}
+
+#score p:last-of-type {
+    font-family: 'Pacifico', cursive;
+    font-size: 20px;
+    color: #FFF;
+    padding: 10px 40px;
+    margin: 0px 10px 10px 0px;
+}
+
+#score p {
+    font-family: 'Pacifico', cursive;
+    font-size: 1em;
+    color: #FFF;
+}
+
+#score span {
     font-size: 35px;
 }
 
