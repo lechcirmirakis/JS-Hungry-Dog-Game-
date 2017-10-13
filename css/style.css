@@ -139,11 +139,7 @@ section#score {
       color: rgb(255, 255, 255);
       white-space: nowrap;
       z-index: 0;
-}
-
-
-.hbtn i {
-      padding-right: 8px;
+      font-size: 2.0em;
 }
 
 .hb-border-bottom-br4 {
@@ -152,7 +148,7 @@ section#score {
       overflow: visible;
       box-sizing: border-box;
       border: none;
-      padding: 5px 50px;
+      padding: 0px 35px;
 }
 
 .hb-border-bottom-br4::after {
