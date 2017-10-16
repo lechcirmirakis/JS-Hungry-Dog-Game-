@@ -208,22 +208,22 @@ body {
 /* SCORE BOARD */
 
 .score_board {
-    color: #000;
     position: absolute;
+    display: none;
+    color: #000;
     left: 10em;
     top: 10em;
     width: 20em;
     height: 17em;
     text-align: center;
     padding: 10px;
-    text-decoration: none;
     background-color: #f7b733;
     font-family: 'Pacifico';
     border-radius: 5px;
     -webkit-box-shadow: 2px 2px 14px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 2px 2px 14px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 2px 2px 14px 0px rgba(0, 0, 0, 0.75);
-    display: none;
+
 }
 
 /* DOG and DAINTY */

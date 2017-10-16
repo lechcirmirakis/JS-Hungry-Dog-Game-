@@ -665,8 +665,7 @@ Game.prototype.gameOver = function () {
 
 Game.prototype.scoreBoard = function () {
     // displays the board with the final score
-    console.log(this.score);
-    var score_board = document.querySelector('.scoreBoard');
+    var score_board = document.querySelector('.score_board');
     score_board.style.display = "inline-block";
     var p_1 = score_board.querySelector('.col-8').firstElementChild;
     var p_2 = score_board.querySelector('#yourScore');
@@ -692,7 +691,7 @@ Game.prototype.scoreBoard = function () {
 
 Game.prototype.playAgain = function () {
     // play again button
-    var playAgain = document.querySelector('.scoreBoard a');
+    var playAgain = document.querySelector('.score_board a');
     playAgain.addEventListener('click', function () {
         location.reload();
     });
