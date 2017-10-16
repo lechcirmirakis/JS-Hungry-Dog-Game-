@@ -288,6 +288,13 @@ p {
     color: #FFF;
 }
 
+.note a {
+    padding: 5px;
+    color: #000;
+    text-decoration: none;
+    font-size: 45px;
+}
+
 #score span {
     font-size: 35px;
 }
