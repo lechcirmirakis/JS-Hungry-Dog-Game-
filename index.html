@@ -1,168 +1,166 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
-    <title>Javascript Hungry Dog Game</title>
+    <title>JavaScript Hungry Dog Game</title>
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <link rel='stylesheet' href='css/style.css'>
 </head>
 
 <body>
-<div class="container">
-    <div class="row">
-        <div class="popup">
-            <div class="bone"></div>
-            <div class="bone"></div>
-            <div class="bone"></div>
-            <div class="bone"></div>
-            <img src="./images/doggy.ico" alt="">
-        <h2>
+    <div class="container">
+        <div class="row">
+            <div class="start_window">
+                <div class="corner"></div>
+                <div class="corner"></div>
+                <div class="corner"></div>
+                <div class="corner"></div>
+                <img src="./images/doggy.ico" alt="">
+                <h2>
         Woof Woof
         </h2>
-        <p>I'm a very hungry dog.</p>
-        <a href="#" class="hbtn hb-fill-on-rev hpill hbor1 hpad2">Feed Me!</a>
-        </div>
-        <div class="col-4">
-
-        <div class="blackboard">
-    <section id='score'>
-        <p>This is a simple game written in JavaScrip. You have to feed the hungry dog. </p>
-        <p>But watch out!</p>
-            <p>Appetite grows with eating ;)</p>
-            <div class="action-button red">
-                <a id="startButton"> Start Game</a>
+                <p>I'm a very hungry dog.</p>
+                <a href="#" class="hbtn hb-fill-on-rev hpill hbor1 hpad2">Feed Me!</a>
             </div>
-        <p>
-            Your Score: <span>0</span>
-        </p>
+            <div class="col-4">
+                <div class="blackboard">
+                    <section id='score'>
+                        <p>This is a simple game written in JavaScrip. You have to feed the hungry dog. </p>
+                        <p>But watch out!</p>
+                        <p>Appetite grows with eating ;)</p>
+                        <div class="action_button">
+                            <a id="startButton"> Start Game</a>
+                        </div>
+                        <p>
+                            Your Score: <span>0</span>
+                        </p>
 
-        <a class="note sticky1">
-        <div class='text'>Copyright Lech Cirmirakis</div>
-        </a>
+                        <div class="note">
+                            <div class='text'>Copyright Lech Cirmirakis</div>
+                        </div>
 
-    </section>
-</div>
+                    </section>
+                </div>
+            </div>
+            <div class="col-8">
+                <section id='board'>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="gameGrid"></div>
+                    <div class="scoreBoard">
+                        <div class="col-4 ">
+                            <img src="./images/doggy.ico" alt="" width="100px">
+                        </div>
+                        <div class="col-8">
+                            <p></p>
+                            <p id="yourScore"></p>
+                        </div>
 
-
-</div>
-        <div class="col-8 div">
-            <section id='board'>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="gameGrid"></div>
-               <div class="scoreBoard">
-                           <div class="col-4 ">
-                             <img src="./images/doggy.ico" alt="" width="100px">
-                           </div>
-                           <div class="col-8">
-                             <p></p>
-                              <p id="yourScore"></p>
-                           </div>
-
-                           <a href="#" class="hbtn hb-fill-on-rev hpill hbor1 hpad2 hbtnScoreBoard">Play Again!</a>
-               </div>
-             </section>
+                        <a href="#" class="hbtn hb-fill-on-rev hpill hbor1 hpad2 hbtn_score_board">Play Again!</a>
+                    </div>
+                </section>
+            </div>
         </div>
-  </div>
-</div>
-  <script src='js/out.js'></script>
+    </div>
+    <script src='js/out.js'></script>
 </body>
 
 </html>

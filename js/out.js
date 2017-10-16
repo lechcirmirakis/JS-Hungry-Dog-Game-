@@ -552,8 +552,8 @@ var doggy = new Game(); // Creates a new game "doggy" based on the constructor G
 doggy.showDainty();
 doggy.showDog();
 
-var popup = document.querySelector('.popup a');
-popup.addEventListener('click', function () {
+var letsPlay = document.querySelector('.start_window a');
+letsPlay.addEventListener('click', function () {
     this.parentElement.style.display = "none";
 });
 

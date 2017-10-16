@@ -81,7 +81,7 @@ section#score {
 
 /* POPUP */
 
-.popup {
+.start_window {
     color: #000;
     position: absolute;
     left: 0;
@@ -102,7 +102,7 @@ section#score {
     box-shadow: 2px 2px 14px 0px rgba(0,0,0,0.75);
 }
 
-.bone {
+.corner {
     position: absolute;
     width: 25px;
     height: 25px;
@@ -110,21 +110,21 @@ section#score {
     background: #FC4A1a;
 }
 
-.bone:nth-child(1) {
+.corner:nth-child(1) {
     top: 17px;
     left: 17px;
 }
 
-.bone:nth-child(2) {
+.corner:nth-child(2) {
     top: 17px;
     left: 455px;
 }
 
-.bone:nth-child(3) {
+.corner:nth-child(3) {
     left: 455px;
     top: 408px;
 }
-.bone:nth-child(4) {
+.corner:nth-child(4) {
     left: 17px;
     top: 408px;
 }
@@ -146,7 +146,7 @@ section#score {
       font-size: 28px;
 }
 
-.hbtnScoreBoard {
+.hbtn_score_board {
     font-size: 22px;
     margin: 21px 3px 6px;
     padding: 6px 30px;
@@ -193,7 +193,7 @@ section#score {
 
 /* BUTTONS */
 
-.action-button {
+.action_button {
     padding: 10px 40px;
     margin: 0px 10px 10px 0px;
     border-radius: 10px;
@@ -202,6 +202,15 @@ section#score {
     color: #FFF;
     text-decoration: none;
     cursor: pointer;
+    background-color: #FC4A1a;
+    border-bottom: 5px solid #BD3E31;
+    text-shadow: 0px -2px #BD3E31;
+}
+
+.action_button:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    border-bottom: 1px solid;
 }
 
 .note {
@@ -213,9 +222,6 @@ section#score {
     float: left;
     margin: 8px;
     border: 1px solid rgba(0,0,0,.25);
-}
-
-.sticky1 {
     transform: rotate(-3.5deg);
     -webkit-transform: rotate(-3.5deg);
     -moz-transform: rotate(-3.5deg);
@@ -224,7 +230,6 @@ section#score {
 
 .text {
     margin: 10px;
-    font-family: 'The Girl Next Door', cursive;
 }
 
 #score p:last-of-type {
@@ -243,18 +248,6 @@ section#score {
 
 #score span {
     font-size: 35px;
-}
-
-.action-button:active {
-    transform: translate(0px, 5px);
-    -webkit-transform: translate(0px, 5px);
-    border-bottom: 1px solid;
-}
-
-.red {
-    background-color: #FC4A1a;
-    border-bottom: 5px solid #BD3E31;
-    text-shadow: 0px -2px #BD3E31;
 }
 
 /* SCORE BOARD */
