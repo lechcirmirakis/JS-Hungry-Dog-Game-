@@ -136,47 +136,54 @@ section#score {
       box-sizing: border-box;
       display: inline-block;
       overflow: hidden;
-      padding: 8px 20px;
-      margin: 15px 3px 6px;
+      padding: 0px 40px;
+      margin: 8px 3px 6px;
+      border: 1px solid #fff;
       text-align: center;
-      border: 2px solid rgb(255, 255, 255);
       text-decoration: none;
       color: rgb(255, 255, 255);
       white-space: nowrap;
       z-index: 0;
-      font-size: 2.0em;
+      font-size: 28px;
 }
 
-.hb-border-bottom-br4 {
-      position: relative;
-      transition-duration: 0.3s;
-      overflow: visible;
-      box-sizing: border-box;
-      border: none;
-      padding: 0px 35px;
+.hbtn i {
+      padding-right: 8px;
 }
 
-.hb-border-bottom-br4::after {
-      box-sizing: border-box;
+.hb-fill-on-rev::before {
       position: absolute;
+      content: "";
+      background: #FC4A1a;
+      transition-duration: 0.3s;
+      z-index: -1;
+      top: 0px;
+      right: auto;
+      bottom: auto;
+      left: 0px;
       width: 100%;
       height: 100%;
-      content: "";
-      border: 2px solid rgb(255, 255, 255);
-      z-index: 2;
-      margin: 0px;
-      left: 0px;
-      bottom: 0px;
-      border-top-width: 2px;
-      transition: border-top-width 0.1s 0.2s, height 0.2s 0.1s, width 0.2s 0s, margin 0.2s 0s, border-bottom-width 0.2s 0s;
+      opacity: 1;
 }
 
-.hb-border-bottom-br4:hover::after {
-      width: 60%;
-      height: 0px;
-      border-width: 0px 2px 4px;
-      margin: 0px 20%;
-      transition: border-top-width 0.1s 0s, height 0.2s 0.1s, width 0.2s 0.2s, margin 0.2s 0.2s, border-bottom-width 0.2s 0.2s;
+.hb-fill-on-rev:hover::before {
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+}
+
+.hb-fill-on-rev:hover {
+      background: transparent;
+      color: rgb(255, 255, 255);
+      transition: color 0.3s ease, background 0s ease;
+}
+
+.hpill {
+      border-radius: 50px;
+}
+
+.hbor1 {
+      border-width: 1px;
 }
 
 /* BUTTONS */
@@ -239,12 +246,6 @@ section#score {
     border-bottom: 1px solid;
 }
 
-.yellow {
-    background-color: #F2CF66;
-    border-bottom: 5px solid #D1B358;
-    text-shadow: 0px -2px #D1B358;
-}
-
 .red {
     background-color: #FC4A1a;
     border-bottom: 5px solid #BD3E31;
@@ -254,6 +255,7 @@ section#score {
 /* SCORE BOARD */
 
 .scoreBoard {
+    color: #fff;
     position: absolute;
     left: 10em;
     top: 10em;
@@ -261,10 +263,12 @@ section#score {
     height: 15em;
     text-align: center;
     text-decoration: none;
-    color: white;
-    background: green;
-    border: 1px solid red;
+    background-color: #f7b733;
+    font-family: 'Pacifico';
     border-radius: 5px;
+    -webkit-box-shadow: 2px 2px 14px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 2px 14px 0px rgba(0,0,0,0.75);
+    box-shadow: 2px 2px 14px 0px rgba(0,0,0,0.75);
 }
 
 /* DOG and DAINTY */

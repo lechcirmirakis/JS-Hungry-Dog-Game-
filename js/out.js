@@ -612,12 +612,7 @@ function Game() {
     var startButton = document.querySelector("#startButton"); // variable for start button
     startButton.addEventListener("click", function (e) {
         self.startGame();
-        self.endEvent();
     }, false);
-
-    this.endEvent = function () {
-        startButton.removeEventListener('click');
-    };
 }
 
 Game.prototype.showDog = function () {
@@ -670,6 +665,7 @@ Game.prototype.gameOver = function () {
 
 Game.prototype.scoreBoard = function () {
     // displays the board with the final score
+    console.log(this.score);
     var score = document.createElement('div');
     score.innerText = "Game Over, your score is " + this.score;
     var score_board = document.createElement('div');
