@@ -82,7 +82,7 @@ section#score {
 /* POPUP */
 
 .popup {
-    color: #fff;
+    color: #000;
     position: absolute;
     left: 0;
     right: 0;
@@ -91,7 +91,6 @@ section#score {
     margin-right: auto;
     text-align: center;
     display: block;
-    background: #fff;
     border-radius: 5px;
     width: 500px;
     height: 450px;
@@ -145,6 +144,12 @@ section#score {
       white-space: nowrap;
       z-index: 0;
       font-size: 28px;
+}
+
+.hbtnScoreBoard {
+    font-size: 22px;
+    margin: 21px 3px 6px;
+    padding: 6px 30px;
 }
 
 .hbtn i {
@@ -255,13 +260,14 @@ section#score {
 /* SCORE BOARD */
 
 .scoreBoard {
-    color: #fff;
+    color: #000;
     position: absolute;
     left: 10em;
     top: 10em;
     width: 20em;
-    height: 15em;
+    height: 17em;
     text-align: center;
+    padding: 10px;
     text-decoration: none;
     background-color: #f7b733;
     font-family: 'Pacifico';
@@ -269,6 +275,7 @@ section#score {
     -webkit-box-shadow: 2px 2px 14px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 2px 2px 14px 0px rgba(0,0,0,0.75);
     box-shadow: 2px 2px 14px 0px rgba(0,0,0,0.75);
+    display: none;
 }
 
 /* DOG and DAINTY */

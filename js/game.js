@@ -89,21 +89,32 @@ Game.prototype.gameOver = function() { // If the dog collides with the wall
 
 Game.prototype.scoreBoard = function() { // displays the board with the final score
     console.log(this.score);
-    var score = document.createElement('div');
-    score.innerText = "Game Over, your score is " + this.score;
-    var score_board = document.createElement('div');
-    score_board.classList.add('scoreBoard');
-    score_board.appendChild(score);
-    var board = document.querySelector('#board');
-    board.appendChild(score_board);
+    var score_board = document.querySelector('.scoreBoard');
+    score_board.style.display = "inline-block";
+    var p_1 = score_board.querySelector('.col-8').firstElementChild;
+    var p_2 = score_board.querySelector('#yourScore');
+    var scoreSpan = score_board.querySelector('span');
+    if (this.score === 0) {
+        p_1.innerText = "Are you crazy? Do you want the dog to die of starvation?";
+        p_2.innerText = "You did not eat any delicacies!"
+    } else if (this.score > 0 && this.score < 10) {
+        p_1.innerText = "The dog is very sad and still hungry!";
+        p_2.innerHTML = "Your number of eaten delicacies is: " + this.score;
+    } else if (this.score >= 10 & this.score < 20) {
+        p_1.innerText = "The dog satisfied the first hunger, but he wants more!";
+        p_2.innerHTML = "Your number of eaten delicacies is: " + this.score;
+    } else if (this.score >= 20 & this.score < 30) {
+        p_1.innerText = "The dog is thankful for the delicacies, but can he eat even more?!";
+        p_2.innerHTML = "Your number of eaten delicacies is: " + this.score;
+    } else if (this.score >= 30) {
+        p_1.innerText = "Dog is very happy, so many delicacies have never eaten :)";
+        p_2.innerHTML = "Your number of eaten delicacies is: " + this.score;
+    }
     this.playAgain();
 };
 
 Game.prototype.playAgain = function() { // play again button
-    var playAgain = document.createElement('button');
-    playAgain.innerText = "Play Again";
-    var inScoreBoard = document.querySelector('.scoreBoard');
-    inScoreBoard.appendChild(playAgain);
+    var playAgain = document.querySelector('.scoreBoard a');
     playAgain.addEventListener('click', function() {
         location.reload();
     })
